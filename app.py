@@ -1,5 +1,5 @@
 import streamlit as st 
-from transformers import AutoModelForCausalLM
+from transformers import AutoProcessor, AutoModelForCausalLM 
 from PIL import Image
 import requests
 from PIL import Image
@@ -31,4 +31,5 @@ st.sidebar.title("Navigation")
 selection = st.sidebar.radio("Go to", ['Caption','Segmentation','Object Detection'])
 
 model = AutoModelForCausalLM.from_pretrained("microsoft/Florence-2-base-ft", trust_remote_code=True)
+processor = AutoProcessor.from_pretrained("microsoft/Florence-2-base-ft", trust_remote_code=True)
 print("model loaded")
