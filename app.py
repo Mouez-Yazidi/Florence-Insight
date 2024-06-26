@@ -17,7 +17,7 @@ selection = st.sidebar.radio("Go to", ['Caption','Segmentation','Object Detectio
 
 try:
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    print(device)
+    st.write(device)
 except Exception as e:
     st.error(f"Error loading model and processor: {str(e)}")
 if option == 'Upload an image':
