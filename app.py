@@ -9,12 +9,12 @@ st.title('My First Streamlit App')
 # Add a welcome message 
 st.write('Welcome to my Streamlit app!') 
 
-# This will not actually change the state in Streamlit, just for display purposes
-st.radio("Select an option:", ('Upload an image', 'Enter an image URL'),index=None)
+
 # Add a sidebar
 st.sidebar.title("Navigation")
 selection = st.sidebar.radio("Go to", ['Caption','Segmentation','Object Detection'])
-
+# This will not actually change the state in Streamlit, just for display purposes
+option = st.radio("Select an option:", ('Upload an image', 'Enter an image URL'),index=None)
 if option == 'Upload an image':
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
     # Open the uploaded image
