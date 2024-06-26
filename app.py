@@ -9,31 +9,8 @@ st.title('My First Streamlit App')
 # Add a welcome message 
 st.write('Welcome to my Streamlit app!') 
 
-st.markdown("""
-    <style>
-    .option-buttons {
-        display: flex;
-        flex-direction: column;
-    }
-    .option-button {
-        margin: 5px 0;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-    .option-button:hover {
-        background-color: #f0f0f0;
-    }
-    </style>
-    <div class="option-buttons">
-        <div class="option-button" onclick="document.getElementById('radio-upload').checked=true; alert('Upload an image selected');">Upload an image</div>
-        <div class="option-button" onclick="document.getElementById('radio-url').checked=true; alert('Enter an image URL selected');">Enter an image URL</div>
-    </div>
-""", unsafe_allow_html=True)
-
 # This will not actually change the state in Streamlit, just for display purposes
-st.radio("Select an option:", ('Upload an image', 'Enter an image URL'))
+st.radio("Select an option:", ('Upload an image', 'Enter an image URL'),index=None)
 # Add a sidebar
 st.sidebar.title("Navigation")
 selection = st.sidebar.radio("Go to", ['Caption','Segmentation','Object Detection'])
