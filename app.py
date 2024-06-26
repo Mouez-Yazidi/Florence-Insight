@@ -4,6 +4,7 @@ from PIL import Image
 import requests
 from PIL import Image
 from io import BytesIO
+import torch
 # Set the app title 
 st.title('My First Streamlit App') 
 # Add a welcome message 
@@ -31,8 +32,7 @@ st.sidebar.title("Navigation")
 selection = st.sidebar.radio("Go to", ['Caption','Segmentation','Object Detection'])
 
 try:
-    model = AutoModelForCausalLM.from_pretrained("microsoft/Florence-2-base-ft", trust_remote_code=True)
-    processor = AutoProcessor.from_pretrained("microsoft/Florence-2-base-ft", trust_remote_code=True)
-    st.success("Model and processor loaded successfully!")
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
+    print(device)
 except Exception as e:
     st.error(f"Error loading model and processor: {str(e)}")
