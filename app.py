@@ -38,11 +38,6 @@ st.radio("Select an option:", ('Upload an image', 'Enter an image URL'))
 st.sidebar.title("Navigation")
 selection = st.sidebar.radio("Go to", ['Caption','Segmentation','Object Detection'])
 
-try:
-    device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    st.write(device)
-except Exception as e:
-    st.error(f"Error loading model and processor: {str(e)}")
 if option == 'Upload an image':
     uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
     # Open the uploaded image
