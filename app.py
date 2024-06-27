@@ -8,8 +8,11 @@ from io import BytesIO
 st.title('My First Streamlit App') 
 # Add a welcome message 
 st.write('Welcome to my Streamlit app!') 
-
-
+try:
+    # Load model directly
+    model = AutoModelForCausalLM.from_pretrained("microsoft/Florence-2-base-ft", trust_remote_code=True)
+except Exception as e:
+    st.write(str(e))
 # Add a sidebar
 st.sidebar.title("Navigation")
 selection = st.sidebar.radio("Go to", ['Caption','Segmentation','Object Detection'])
