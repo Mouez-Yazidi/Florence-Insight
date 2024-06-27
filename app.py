@@ -11,6 +11,7 @@ st.write('Welcome to my Streamlit app!')
 try:
     # Load model directly
     model = AutoModelForCausalLM.from_pretrained("microsoft/Florence-2-base-ft", trust_remote_code=True)
+    st.write("model loaded ...")
 except Exception as e:
     st.write(str(e))
 # Add a sidebar
