@@ -3,6 +3,6 @@ transformers>=4.38.0
 matplotlib
 torch
 einops==0.3.0
-flash-attn==0.1.1
+flash-attn
 timm
 pillow >= 10.2.0
