@@ -1,12 +1,5 @@
 streamlit
-transformers
-torch==2.0.1
-requests==2.28.1
-Pillow==9.1.1
-matplotlib==3.5.2
-numpy==1.26.4
-altair<5
-torch
+transformers>=4.38.0
+matplotlib
 timm
-einops
-flash_attn
+pillow >= 10.2.0
