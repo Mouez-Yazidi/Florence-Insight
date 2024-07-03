@@ -5,3 +5,4 @@ torch
 einops==0.3.0
 timm
 pillow>=10.2.0
+-e .
