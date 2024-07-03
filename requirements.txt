@@ -4,5 +4,5 @@ matplotlib
 torch
 einops==0.3.0
 timm
-flash-attn --no-build-isolation
+flash-attn
 pillow >= 10.2.0
