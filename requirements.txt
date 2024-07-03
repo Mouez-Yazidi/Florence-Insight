@@ -4,5 +4,4 @@ matplotlib
 torch
 einops==0.3.0
 timm
-flash-attn
-pillow >= 10.2.0
+pillow>=10.2.0
